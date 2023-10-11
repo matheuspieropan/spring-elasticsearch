@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PessoaRepository extends ElasticsearchRepository<Pessoa, Long> {
+    long countAllBy();
 }

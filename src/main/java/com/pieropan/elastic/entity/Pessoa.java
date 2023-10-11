@@ -5,7 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -21,7 +24,8 @@ public class Pessoa {
 
     private String apelido;
 
+    @Field(type = FieldType.Text)
     private String nascimento;
 
-    private List<String> stack;
+    private List<String> stack = new ArrayList<>();
 }
